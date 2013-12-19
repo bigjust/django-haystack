@@ -290,6 +290,11 @@ An example::
 
 Default is ``haystack.utils.default_get_identifier``.
 
+.. note::
+
+    The elasticsearch backend relies on this format, if you change the format
+    you need to make sure its `get_type_and_id` method keeps working.
+
 
 ``HAYSTACK_FUZZY_MIN_SIM``
 ==========================

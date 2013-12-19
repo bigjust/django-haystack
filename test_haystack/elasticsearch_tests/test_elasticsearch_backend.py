@@ -1391,7 +1391,9 @@ class RecreateIndexTestCase(TestCase):
     def test_recreate_index(self):
         clear_elasticsearch_index()
 
-        sb = connections['elasticsearch'].get_backend()
+        sb = connections['default'].get_backend()
+        # reset the backend
+        sb.existing_mapping = {}
         sb.silently_fail = True
         sb.setup()
 
