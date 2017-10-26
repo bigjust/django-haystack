@@ -174,7 +174,7 @@ class ElasticsearchSearchBackend(BaseSearchBackend):
         reprsenting an object.
         """
         if hasattr(obj_or_string, '_meta'):
-            doc_id = '.'.join((obj_or_string._meta.app_label, obj_or_string._meta.module_name, str(obj_or_string.pk)))
+            doc_id = '.'.join((obj_or_string._meta.app_label, obj_or_string._meta.model_name, str(obj_or_string.pk)))
             doc_type = self.get_es_type(obj_or_string)
         else:
             doc_id = obj_or_string
