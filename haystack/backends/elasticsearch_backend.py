@@ -178,7 +178,7 @@ class ElasticsearchSearchBackend(BaseSearchBackend):
             doc_type = self.get_es_type(obj_or_string)
         else:
             doc_id = obj_or_string
-            doc_type = self.get_es_type(get_model(*obj_or_string.split('.')[:2]))
+            doc_type = self.get_es_type(haystack_get_model(*obj_or_string.split('.')[:2]))
         return doc_type, doc_id
 
     def update(self, index, iterable, commit=True):
