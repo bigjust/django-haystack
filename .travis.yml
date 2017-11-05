@@ -71,5 +71,4 @@ matrix:
         - python: 'pypy'
 
 notifications:
-    irc: "irc.freenode.org#haystack"
     email: false
